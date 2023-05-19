@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\peopleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('127.0.0.1/Gruba/50264/people', [peopleController::class, 'index'] );
+Route::post('127.0.0.1/Gruba/50264/people', [peopleController::class, 'create'] );
+Route::put('127.0.0.1/Gruba/50264/people/{id}', [peopleController::class, 'update'] );
+Route::get('127.0.0.1/Gruba/50264/people/{id}', [peopleController::class, 'show'] );
+Route::delete('127.0.0.1/Gruba/50264/people/{id}', [peopleController::class, 'delete'] );
